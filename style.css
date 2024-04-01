@@ -1,25 +1,50 @@
 body{
-    background-color: hwb(15 47% 5% / 0.929);
+    background-color: #0D2847;
     color: #C2E6FF;
 
 }
 
-
-.titre{
-    position:relative;
-    height: 200px;
-}
-
-.titre h1{
-    position: absolute;
-    color:#fff;
-    transform:translate(-50,-50%);
+h1{
     font-size: 45px;
-    /* text-align: center; ne fonctionne pas a cause de position absolute  dc padding*/
-    padding-left: 18%;
+    text-align: center; 
     text-shadow: 2px 1px 1px #111927;
 }
 
+#gauges {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gauge {
+    background-color: #003362;
+    border-radius: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+    0 2px 2px rgba(0,0,0,0.12), 
+    0 4px 4px rgba(0,0,0,0.12), 
+    0 8px 8px rgba(0,0,0,0.12),
+    0 16px 16px rgba(0,0,0,0.12);
+    
+    position: relative;
+    display: block;
+    height: 300px;
+    width: 20%;
+}
+
+/* Remplissage de bas en haut */
+.gauge-filling {
+    background: linear-gradient( #70B8FF, #3B9EFF);
+    border-radius: 0px 0px 20px 20px;
+    animation: animate 4s ease-in-out infinite; /*vagues*/   
+    transition: all 0.3s linear 0s;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 300px;
+}
 
 @keyframes animate
 {
@@ -35,102 +60,23 @@ body{
     }
 }
 
-@keyframes animate2
-{
-    0%,100%
-    {
-         /* clip-path: polygon(0 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%); */
-         clip-path: polygon(0 13%, 9% 23%, 19% 36%, 36% 49%, 58% 55%, 84% 52%, 95% 41%, 100% 34%, 99% 99%, 0% 99%); 
-    }
-    70%
-    {
-       
-         /* clip-path: polygon(0 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);  */
-         Clip-path: polygon(0 45%, 9% 52%, 23% 59%, 46% 66%, 62% 62%, 76% 56%, 87% 56%, 100% 63%, 99% 99%, 0% 99%); 
-    }
-}
-
-.titre h1:nth-child(1){
-    color:transparent;
-    -webkit-text-stroke:2px #3B9EFF;
-}
-
-
-.titre h1:nth-child(2){
-    color:#C2E6FF;
-    animation: animate2 4s ease-in-out infinite;
-}
-
-
-
-.jauge {
-    height: 300px;
-    width: 20%;
-    display: block;
-    background-color: #81b9f5;
-    position: relative;
-    border-radius: 20px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-    0 2px 2px rgba(0,0,0,0.12), 
-    0 4px 4px rgba(0,0,0,0.12), 
-    0 8px 8px rgba(0,0,0,0.12),
-    0 16px 16px rgba(0,0,0,0.12);
-    
-
-}
-
-/* Remplissage de bas en haut */
-.jauge-remplissage {
-    transition: all 0.3s linear 0s;
-    background: linear-gradient( #0090FF, #9fd1f8);
-    width: 100%;
-    height: 300px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    border-radius: 0px 0px 20px 20px;
-    animation: animate 4s ease-in-out infinite; /*vagues*/   
-}
-
-
-#jauges {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-}
-
-
-
-.legendes{
+.legends{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center;
 }
 
-.legendes h2{
+.legends h2{
     width: 30%;
-
 }
 
-.jauge:hover .jauge-remplissage {
+.gauge:hover .jauge-remplissage {
     opacity: 0.3;
 }
-.carte{
+
+.map{
    margin-left: 260px;
    margin-top: 120px;
    width:30%;
-
- 
 }
-
-
-
-
-/*
- .jauge:hover:hover .test{
-    font-weight: bold;
-} 
-
-Ne marche pas*/
