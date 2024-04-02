@@ -24,17 +24,24 @@ function rate(level, max){
 
 
 function createGauge(level,max){ 
+  const waterLevel = rate(level,max); //  holds result of function rate()
+  const waterLevel2 = "'"+waterLevel+"'"+"%"
+
   const gauges = document.getElementById('gauges');
   const parentDiv = document.createElement("div");
+  const childPara = document.createElement("p");
+  const childText = document.createTextNode(waterLevel2)
   const childSpan = document.createElement("span"); 
-  const waterLevel = rate(level,max); //  holds result of function rate()
+
   
   parentDiv.setAttribute('class', 'gauge');
-
+  childPara.setAttribute('class','gauge-text');
   childSpan.setAttribute('class', 'gauge-filling');
   childSpan.setAttribute('style', 'height: ' + waterLevel + '%');
   
-  parentDiv.appendChild(childSpan);
+  childPara.appendChild(childSpan);
+  childPara.appendChild(childText);
+  parentDiv.appendChild(childPara);
   gauges.appendChild(parentDiv);
 }
 

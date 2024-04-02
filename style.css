@@ -11,6 +11,7 @@ body{
 h1{
     font-size: 45px;
     text-align: center; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 2px 1px 1px #111927;
 }
 
@@ -60,6 +61,7 @@ p{
 /* Remplissage de bas en haut */
 .gauge-filling {
     background: linear-gradient( #70B8FF, #3B9EFF);
+    color: transparent;
     border-radius: 0px 0px 20px 20px;
     animation: animate 4s ease-in-out infinite; /*vagues*/   
     transition: all 0.3s linear 0s;
@@ -107,4 +109,22 @@ p{
     margin-left: 70px;
     margin-top: 60px;
  }
+
+
+
+ /* tests pour mettre pourcentage au survol de la jauge : 
+ TO DO : le créer automatiquement dans js et relier à api (puis supp la jauge en trop)*/
+ .gauge-text{
+    color: transparent;
+    text-align: center;
+
+    margin: 0px;
+    height: 100%;
+    padding-top: 100%;
+    
+ }
+
+ .gauge:hover .gauge-text {
+    color: white;
+}
 
