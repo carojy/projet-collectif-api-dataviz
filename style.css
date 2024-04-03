@@ -9,7 +9,10 @@ body{
 }
 
 h1{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
     font-size: 45px;
+    font-style: normal;
     text-align: center; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 2px 1px 1px #111927;
@@ -37,10 +40,11 @@ p{
 #gauges {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 60px;
+    justify-content: space-around;
+
 
     margin-top: 30px;
+    margin-left: 60px;
 }
 
 .gauge {
@@ -55,7 +59,7 @@ p{
     position: relative;
     display: block;
     height: 300px;
-    width: 18%;
+    width: 25%;
 }
 
 /* Remplissage de bas en haut */
@@ -88,17 +92,32 @@ p{
     }
 }
 
-.gauge:hover .gauge-filling {
+ .gauge-text{
+    color: transparent;
+    text-align: center;
+
+    margin: 0px;
+    height: 100%;
+    padding-top: 100%;
+    padding-left: 30%;
+    padding-right: 30%;    
+ }
+
+ .gauge:hover .gauge-filling {
     opacity: 0.3;
 }
 
-.legends{
+ .gauge:hover .gauge-text {
+    color: white;
+}
+
+#legends{
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 90px;
+    justify-content: space-around;
 
+    margin-left: 60px;
 }
 
 #map{
@@ -109,22 +128,3 @@ p{
     margin-left: 70px;
     margin-top: 60px;
  }
-
-
-
- /* tests pour mettre pourcentage au survol de la jauge : 
- TO DO : le créer automatiquement dans js et relier à api (puis supp la jauge en trop)*/
- .gauge-text{
-    color: transparent;
-    text-align: center;
-
-    margin: 0px;
-    height: 100%;
-    padding-top: 100%;
-    
- }
-
- .gauge:hover .gauge-text {
-    color: white;
-}
-

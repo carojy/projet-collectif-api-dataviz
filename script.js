@@ -9,11 +9,15 @@ fetch("https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/chroniques?code_bss=094
 // .then : execute loop for of 
 .then((mesures)=>{
     const gaugeMax= mesures.data[0].profondeur_nappe +mesures.data[0].niveau_nappe_eau;
+
     const firstYearLevel = mesures.data[0].niveau_nappe_eau;
+    const firstYear = mesures.data[0].date_mesure;
+
     const secondYearLevel = mesures.data[mesures.data.length-1].niveau_nappe_eau;
+    const secondYear = mesures.data[mesures.data.length-1].date_mesure;
       
-    createGauge(firstYearLevel,gaugeMax); // call createGauge()
-    createGauge(secondYearLevel,gaugeMax);     
+    createGauge(firstYearLevel,gaugeMax, secondYear); // call createGauge()
+    createGauge(secondYearLevel,gaugeMax,firstYear);     
     console.log(mesures)
 });
 
@@ -23,15 +27,17 @@ function rate(level, max){
 }
 
 
-function createGauge(level,max){ 
+function createGauge(level,max,year){ 
+  // for creating gauge text
   const waterLevel = rate(level,max); //  holds result of function rate()
-  const waterLevel2 = "'"+waterLevel+"'"+"%"
+  const gaugeString = (waterLevel).toString()+' %';
 
   const gauges = document.getElementById('gauges');
-  const parentDiv = document.createElement("div");
-  const childPara = document.createElement("p");
-  const childText = document.createTextNode(waterLevel2)
-  const childSpan = document.createElement("span"); 
+  const parentDiv = document.createElement('div');
+  const childPara = document.createElement('p');
+
+  const childText = document.createTextNode(gaugeString + ' ' + Math.round(level) + ' m'); //   needed string value to work with TextNode so created gaugeString
+  const childSpan = document.createElement('span'); 
 
   
   parentDiv.setAttribute('class', 'gauge');
@@ -39,10 +45,20 @@ function createGauge(level,max){
   childSpan.setAttribute('class', 'gauge-filling');
   childSpan.setAttribute('style', 'height: ' + waterLevel + '%');
   
+
   childPara.appendChild(childSpan);
   childPara.appendChild(childText);
   parentDiv.appendChild(childPara);
   gauges.appendChild(parentDiv);
+
+ 
+ // same process for creating legends titles
+  const legends = document.getElementById('legends');
+  const legendsTitle =  document.createElement('h2');
+  const legendYear= document.createTextNode(year)
+  
+  legendsTitle.appendChild(legendYear)
+  legends.appendChild(legendsTitle)
 }
 
 
