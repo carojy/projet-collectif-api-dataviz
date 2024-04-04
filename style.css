@@ -1,35 +1,77 @@
 body{
-    background-color: #0D2847;
+    background-color: #0D1520;
     color: #C2E6FF;
-
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 20px;
+
+    padding-right: 70px;
+    padding-top: 15px;
+}
+
+header{
+    background-color: #0D1520;
+
+    height: 60px;
+}
+
+.top-page{
+    background-color:#0D2847 ;
+    display: flex;
+    
+    padding-left: 80px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    height: 400px;
+ }
 
 h1{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
-    font-size: 45px;
+    font-size: 65px;
     font-style: normal;
-    text-align: center; 
+
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-shadow: 2px 1px 1px #111927;
+
+    width: 50%;
+    position:absolute;
 }
 
-p{
-    text-align: justify;
+.schema {
+    
+    margin-top: 60px;
+    position:absolute;
+    left: 50%;
+}
 
-    margin: 70px;
+#chiffres {
+    text-align: justify;
+    background-color:#0D2847 ;
+
+    display: flex;
+    justify-content: space-around;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-top: 50px;
 }
 
 .container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     
     width: 80%;
-    margin-left: 70px;
+    margin: 100px;
 }
 
 .water-level-history{
@@ -124,7 +166,27 @@ p{
     width:50%;
  }
 
- .interpretation{
-    margin-left: 70px;
-    margin-top: 60px;
- }
+
+.interpretation {
+    background-color: #0D2847;
+    text-align: justify;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 70px;
+    padding-top: 20px;
+
+    margin-top: 135px;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
+    font-size: 35px;
+    font-style: normal;
+}
+
+a{
+    color: #C2E6FF;
+}
+

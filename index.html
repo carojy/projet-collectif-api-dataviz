@@ -13,14 +13,29 @@
         ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "beta"});</script>
 
     <link rel= "stylesheet" href="style.css">
-
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="#chiffres">Chiffres</a>
+            <a href="#map">Evolution</a>
+            <a href="#explications">Explication</a>
+        </nav>
+    </header>
 
-    <h1>Nappe phréatique de Rochefort-du-Gard</h1>
+    <div class="top-page">
+        <h1>Evolution de la nappe phréatique de<br>Rochefort-<br>du-Gard</h1>
+        <img class="schema" src="src/schema-nappe-phreatique.png" alt="schema coupe nappe phréatique">
+    </div>
     
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    <div id="chiffres">
+        <img src="src/baisse-valeur-nappe-phreatique.png" alt="">
+        <img src="src/baisse-moyenne-annuelle-nappe.png" alt="">
+        <img src="src/tx-evolution-nappe-phreatique.png" alt="">
+    </div> 
+    
     <div class="container">
 
         <div id="map">
@@ -31,16 +46,21 @@
             </div>
 
             <div id="legends">
-                <!-- <h2>2014</h2>
-                <h2>2024</h2> -->
             </div>
 
         </div>
         
     </div>
+    
 
-    <h2 class="interpretation">Interprétation</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="interpretation">
+        <h2 id="explications">Explications</h2>
+        <p>Le but de ce projet est de créer une page web affichant de manière visuelle et dynamique les données de l'API du gouvernement <a href="https://api.gouv.fr/les-api/api_hubeau_piezometrie" target="_blank">Hub'Eau</a>.
+        Les données de cette API issues des relevés piézométriques reflètent le niveau des nappes phréatiques. La donnée choisie pour le projet concerne l'évolution d'une nappe phréatique du sud de la France à 10 ans d'écart.<br>
+
+        <br>Scope: du 20 Janvier 2014 au 2024 (hiver), ville de Rochefort-du-Gard (30), code BSS 09405X0229/S3.</p>
+    </div>
+    
    
 
     
