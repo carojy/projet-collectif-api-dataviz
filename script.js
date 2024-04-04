@@ -16,8 +16,8 @@ fetch("https://hubeau.eaufrance.fr/api/v1/niveaux_nappes/chroniques?code_bss=094
     const secondYearLevel = mesures.data[mesures.data.length-1].niveau_nappe_eau;
     const secondYear = mesures.data[mesures.data.length-1].date_mesure;
       
-    createGauge(firstYearLevel,gaugeMax, secondYear); // call createGauge()
-    createGauge(secondYearLevel,gaugeMax,firstYear);     
+    createGauge(firstYearLevel,gaugeMax, firstYear); // call createGauge()
+    createGauge(secondYearLevel,gaugeMax,secondYear);     
     console.log(mesures)
 });
 
@@ -35,7 +35,6 @@ function createGauge(level,max,year){
   const gauges = document.getElementById('gauges');
   const parentDiv = document.createElement('div');
   const childPara = document.createElement('p');
-
   const childText = document.createTextNode(gaugeString + ' ' + Math.round(level) + ' m'); //   needed string value to work with TextNode so created gaugeString
   const childSpan = document.createElement('span'); 
 
@@ -62,7 +61,7 @@ function createGauge(level,max,year){
 }
 
 
-async function initMap() {
+async function initMap() {  //  create map
   let map;
   const position = { lat: 43.9738383, lng: 4.6903765 }; // The location of Rochefort
   const { Map } = await google.maps.importLibrary("maps");  // Request needed libraries
@@ -81,7 +80,7 @@ async function initMap() {
   });
 }
 
-initMap();
+initMap(); 
 
 
 
