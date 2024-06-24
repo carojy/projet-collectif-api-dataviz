@@ -61,26 +61,7 @@ function createGauge(level,max,year){
 }
 
 
-async function initMap() {  //  create map
-  let map;
-  const position = { lat: 43.9738383, lng: 4.6903765 }; // The location of Rochefort
-  const { Map } = await google.maps.importLibrary("maps");  // Request needed libraries
-  const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-  map = new Map(document.getElementById("map"), { // The map, centered at Rochefort
-    zoom: 10,
-    center: position,
-    mapId: "ROCHEFORT_MAP_ID",
-  });
-
-  const marker = new AdvancedMarkerView({ // The marker, positioned at Rochefort
-    map: map,
-    position: position,
-    title: "Rochefort",
-  });
-}
-
-initMap(); 
 
 
 
